@@ -29,7 +29,7 @@ interface AppStateContextValue {
   clearReaction: () => void;
   redeemHiddenCodes: (input: string) => UnlockResult | null;
   addMemory: (entry: MemoryEntry) => void;
-  clearCompanionMemories: (companionId: CompanionId) => void;
+  clearAppearanceMemories: (appearanceId: string) => void;
 }
 
 const AppStateContext = createContext<AppStateContextValue | null>(null);
@@ -137,7 +137,7 @@ export function AppStateProvider({ children }: PropsWithChildren) {
     addMemory: (entry) => setState((current) => current.memories.some(({ id }) => id === entry.id)
       ? current
       : { ...current, memories: [...current.memories, entry].slice(-500) }),
-    clearCompanionMemories: (companionId) => setState((current) => ({ ...current, memories: current.memories.filter((entry) => entry.companionId !== companionId) })),
+    clearAppearanceMemories: (appearanceId) => setState((current) => ({ ...current, memories: current.memories.filter((entry) => entry.appearanceId !== appearanceId) })),
   }), [reaction, state]);
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

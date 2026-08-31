@@ -21,7 +21,7 @@ export interface LocalChatMessage {
 type Histories = Record<string, LocalChatMessage[]>;
 
 export function useCompanionChat(companionId: CompanionId) {
-  const { state, interact, addMemory, clearCompanionMemories } = useAppState();
+  const { state, interact, addMemory, clearAppearanceMemories } = useAppState();
   const [histories, setHistories] = useState<Histories>(loadHistories);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -39,8 +39,8 @@ export function useCompanionChat(companionId: CompanionId) {
     const next = [...previous, userMessage].slice(-MAX_MESSAGES);
     setHistories((current) => ({ ...current, [appearanceId]: next }));
     interact({ type: 'chat_sent', content, at });
-    if (!previous.length) addMemory(makeFirstChatMemory(companionId, at));
-    const fact = extractUserFact(companionId, content, userMessage.id);
+    if (!previous.length) addMemory(makeFirstChatMemory(companionId, appearanceId, at));
+    const fact = extractUserFact(companionId, appearanceId, content, userMessage.id);
     if (fact) addMemory(fact);
     setBusy(true);
     setError('');
@@ -70,6 +70,7 @@ export function useCompanionChat(companionId: CompanionId) {
         addMemory({
           id: `summary-${companionId}-${appearanceId}-${Math.floor(completed.length / 10)}`,
           companionId,
+          appearanceId,
           type: 'conversation_summary',
           content: `近期对话摘要：${completed.slice(-6).map((entry) => entry.content).join('；').slice(0, 800)}`,
           importance: 45,
@@ -93,7 +94,7 @@ export function useCompanionChat(companionId: CompanionId) {
     send,
     clear: (includeMemories = false) => {
       setHistories((current) => ({ ...current, [appearanceId]: [] }));
-      if (includeMemories) clearCompanionMemories(companionId);
+      if (includeMemories) clearAppearanceMemories(appearanceId);
       setError('');
     },
   }), [appearanceId, busy, companionId, error, messages, state]);

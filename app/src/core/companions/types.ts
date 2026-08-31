@@ -95,6 +95,7 @@ export interface CompanionState {
 export interface MemoryEntry {
   id: string;
   companionId: CompanionId;
+  appearanceId: string;
   type: 'user_fact' | 'relationship_event' | 'conversation_summary';
   content: string;
   importance: number;

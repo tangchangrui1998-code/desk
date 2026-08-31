@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from 'react';
 import type { AppMode } from '../../app/routes';
-import { getActiveAppearance, getActiveCompanion, getCompanionName } from '../../core/companions/selectors';
+import { getActiveAppearance, getActiveCompanion, getCompanionName, getDialogueCharacterName } from '../../core/companions/selectors';
 import { buildProactiveSystemPrompt } from '../../core/dialogue/contextBuilder';
 import { resolveHitZone } from '../../core/interactions/hitZones';
 import type { AppearanceDefinition } from '../../core/companions/types';
@@ -32,6 +32,7 @@ export function DesktopPet({ mode, scale, onModeChange, onScaleChange }: {
   const companion = getActiveCompanion(state);
   const appearance = getActiveAppearance(state);
   const companionName = getCompanionName(state, companion.id);
+  const dialogueCharacterName = getDialogueCharacterName(state, companion.id);
   const activeReaction = reaction?.companionId === companion.id ? reaction : null;
 
   useEffect(() => {
@@ -122,7 +123,7 @@ export function DesktopPet({ mode, scale, onModeChange, onScaleChange }: {
 
   return (
     <main className={`desktop-pet-root ${menuOpen ? 'has-menu' : ''} ${chatting ? 'is-chatting' : ''}`} style={{ '--pet-scale': scale } as React.CSSProperties}>
-      {chatting && <PetChatPanel companionId={companion.id} companionName={companionName} appearance={appearance} onClose={() => onModeChange('pet')} />}
+      {chatting && <PetChatPanel companionId={companion.id} companionName={dialogueCharacterName} appearance={appearance} onClose={() => onModeChange('pet')} />}
       <PetQuickMenu
         open={menuOpen}
         scale={scale}

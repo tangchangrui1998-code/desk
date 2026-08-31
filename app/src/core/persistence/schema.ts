@@ -147,6 +147,8 @@ function sanitizeMemories(value: unknown): MemoryEntry[] {
     if (!isRecord(entry)
       || typeof entry.id !== 'string'
       || !isCompanionId(entry.companionId)
+      || typeof entry.appearanceId !== 'string'
+      || APPEARANCE_BY_ID[entry.appearanceId]?.companionId !== entry.companionId
       || !isMemoryType(entry.type)
       || typeof entry.content !== 'string'
       || !entry.content.trim()
@@ -154,6 +156,7 @@ function sanitizeMemories(value: unknown): MemoryEntry[] {
     return [{
       id: entry.id,
       companionId: entry.companionId,
+      appearanceId: entry.appearanceId,
       type: entry.type,
       content: entry.content.slice(0, 4_000),
       importance: boundedNumber(entry.importance, 0, 0, 100),

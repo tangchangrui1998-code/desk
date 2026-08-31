@@ -1,18 +1,24 @@
 type UnknownRecord = Record<string, unknown>;
 
-export const LATEST_STATE_VERSION = 3;
+export const LATEST_STATE_VERSION = 4;
 
 export function migratePersistedState(input: unknown): unknown {
   if (!isRecord(input)) return null;
   const version = typeof input.version === 'number' ? input.version : 0;
   if (version === LATEST_STATE_VERSION) return input;
+  if (version === 3) {
+    // v3 memories only identified one of the four base companions, so memories
+    // from distinct appearance personas could contaminate each other's prompt.
+    return { ...input, version: 4, memories: [] };
+  }
   if (version === 2) {
-    return { ...input, version: 3, appearancePersonaOverrides: {} };
+    return { ...input, version: 4, memories: [], appearancePersonaOverrides: {} };
   }
   if (version === 1) {
     return {
       ...input,
-      version: 3,
+      version: 4,
+      memories: [],
       appearancePersonaOverrides: {},
       settings: {
         alwaysOnTop: true,

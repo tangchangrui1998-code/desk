@@ -1,5 +1,5 @@
 import { APPEARANCE_BY_ID, COMPANION_BY_ID } from '../companions/registry';
-import { getAppearancePersona, getCompanionName } from '../companions/selectors';
+import { getAppearancePersona, getDialogueCharacterName } from '../companions/selectors';
 import type { AppState, CompanionId } from '../companions/types';
 import { retrieveMemories } from '../memory/retrieval';
 
@@ -8,9 +8,10 @@ export function buildSystemPrompt(state: AppState, companionId: CompanionId, que
   const companionState = state.companions[companionId];
   const appearance = APPEARANCE_BY_ID[companionState.activeAppearanceId];
   const persona = getAppearancePersona(state, appearance.id) ?? appearance.persona;
-  const memories = retrieveMemories(state.memories, companionId, query);
+  const memories = retrieveMemories(state.memories, companionId, appearance.id, query);
   return [
-    `你是离线优先桌面伙伴“${getCompanionName(state, companionId)}”。`,
+    `你是离线优先桌面伙伴“${getDialogueCharacterName(state, companionId)}”。`,
+    `你当前且唯一的身份来自人物“${appearance.name}”（内部标识：${appearance.id}）。不得采用、混合或暗示其他人物的身份、经历、职业、关系和口吻。`,
     '【人物资料（只供内化，不要主动复述）】',
     `身份：${persona.identity}`,
     `经历：${persona.story}`,
@@ -39,7 +40,8 @@ export function buildProactiveSystemPrompt(state: AppState, companionId: Compani
   const persona = getAppearancePersona(state, appearance.id) ?? appearance.persona;
   const period = getPeriodLabel(date.getHours());
   return [
-    `你是桌面伙伴“${getCompanionName(state, companionId)}”。`,
+    `你是桌面伙伴“${getDialogueCharacterName(state, companionId)}”。`,
+    `你当前且唯一的身份来自人物“${appearance.name}”（内部标识：${appearance.id}）。不得采用或混合其他人物的设定。`,
     '【人物资料（只供内化，不要复述）】',
     `身份：${persona.identity}`,
     `经历：${persona.story}`,
