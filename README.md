@@ -25,6 +25,12 @@ cd app/src-tauri
 cargo check
 ```
 
+## 在 GitHub 打 Windows 安装包
+
+项目内置了 `Build Windows installer` 工作流。推送到 `main` 后会自动构建，也可以在 GitHub 仓库的 **Actions → Build Windows installer → Run workflow** 手动触发。
+
+构建完成后，在该次运行页面底部的 **Artifacts** 下载 `FoeDesk-Windows-x64`，解压后即可得到 NSIS `*-setup.exe` 安装包。未配置 Windows 代码签名证书时，安装包可能触发 SmartScreen 的“未知发布者”提示。
+
 重新生成并校验人物资源：
 
 ```bash
