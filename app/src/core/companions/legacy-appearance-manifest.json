@@ -1,0 +1,1395 @@
+{
+  "version": 1,
+  "appearances": [
+    {
+      "id": "boy-default",
+      "companionId": "boy",
+      "name": "日常轻装",
+      "description": "轻便、柔和的日常装束。",
+      "color": "#72a88e",
+      "accent": "#d8f0dc",
+      "assetFile": "boy-default.webp",
+      "thumbnailFile": "boy-default.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "boy-raincoat",
+      "companionId": "boy",
+      "name": "雨衣探险家",
+      "description": "不怕小雨，也不怕泥点。",
+      "color": "#d7a93b",
+      "accent": "#fff0a6",
+      "assetFile": "boy-raincoat.webp",
+      "thumbnailFile": "boy-raincoat.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "boy-starry",
+      "companionId": "boy",
+      "name": "星夜睡衣",
+      "description": "看起来随时都能在帐篷里睡着。",
+      "color": "#52639a",
+      "accent": "#d9e0ff",
+      "assetFile": "boy-starry.webp",
+      "thumbnailFile": "boy-starry.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "boy-code-turtle",
+      "companionId": "boy",
+      "name": "慢慢来",
+      "description": "它不着急，今天也会一步一步地陪你。",
+      "color": "#718339",
+      "accent": "#e6dc62",
+      "assetFile": "boy-code-turtle.webp",
+      "thumbnailFile": "boy-code-turtle.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "little-turtle"
+      },
+      "cheatCode": {
+        "id": "little-turtle",
+        "code": "TURTLE-01",
+        "badge": "龟",
+        "unlockedMessage": "慢一点也没关系。小乌龟已经来到桌面。",
+        "activatedMessage": "暗号再次确认。小乌龟慢慢爬回了桌面。"
+      }
+    },
+    {
+      "id": "girl-default",
+      "companionId": "girl",
+      "name": "初见斗篷",
+      "description": "口袋很多的柔软斗篷。",
+      "color": "#c88792",
+      "accent": "#f8dede",
+      "assetFile": "girl-default.webp",
+      "thumbnailFile": "girl-default.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "girl-forest",
+      "companionId": "girl",
+      "name": "森林斗篷",
+      "description": "叶片形状的扣子会轻轻发亮。",
+      "color": "#547d5a",
+      "accent": "#d9e7b8",
+      "assetFile": "girl-forest.webp",
+      "thumbnailFile": "girl-forest.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "girl-witch",
+      "companionId": "girl",
+      "name": "见习魔女",
+      "description": "帽檐下面藏着一片星光。",
+      "color": "#72578f",
+      "accent": "#ebd9ff",
+      "assetFile": "girl-witch.webp",
+      "thumbnailFile": "girl-witch.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "girl-code-penguin",
+      "companionId": "girl",
+      "name": "冰钓企鹅",
+      "description": "它守着胡萝卜鱼饵，认真等待今天的第一条鱼。",
+      "color": "#27343b",
+      "accent": "#a9d2e8",
+      "assetFile": "girl-code-penguin.webp",
+      "thumbnailFile": "girl-code-penguin.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "fishing-penguin"
+      },
+      "cheatCode": {
+        "id": "fishing-penguin",
+        "code": "PENGUIN-01",
+        "badge": "企鹅",
+        "unlockedMessage": "暗号确认。钓鱼的小企鹅已经陪莓莓来到桌面。",
+        "activatedMessage": "暗号再次确认。钓鱼的小企鹅已经坐回冰台。"
+      }
+    },
+    {
+      "id": "girl-code-rei",
+      "companionId": "girl",
+      "name": "零号机驾驶员",
+      "description": "她在冷白灯光下安静等待下一条指令。",
+      "color": "#edf3f8",
+      "accent": "#79b8d6",
+      "assetFile": "girl-code-rei.webp",
+      "thumbnailFile": "girl-code-rei.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "eva-unit-00"
+      },
+      "cheatCode": {
+        "id": "eva-unit-00",
+        "code": "EVA-00-REI",
+        "badge": "00",
+        "unlockedMessage": "暗号确认。零号机驾驶员已经来到莓莓的衣柜。",
+        "activatedMessage": "暗号再次确认。零号机驾驶员已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-crimson-sword",
+      "companionId": "girl",
+      "name": "绯月剑姬",
+      "description": "月落江湖，她把未说出口的话藏进剑锋。",
+      "color": "#24171c",
+      "accent": "#b92f45",
+      "assetFile": "girl-code-crimson-sword.webp",
+      "thumbnailFile": "girl-code-crimson-sword.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "crimson-sword"
+      },
+      "cheatCode": {
+        "id": "crimson-sword",
+        "code": "CRIMSON-SWORD",
+        "badge": "剑",
+        "unlockedMessage": "暗号确认。绯月剑姬已经踏月而来。",
+        "activatedMessage": "暗号再次确认。绯月剑姬已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-evening-lecturer",
+      "companionId": "girl",
+      "name": "晚课导师",
+      "description": "最后一节课结束后，她仍为你留着一盏灯。",
+      "color": "#342f2d",
+      "accent": "#d8c4a4",
+      "assetFile": "girl-code-evening-lecturer.webp",
+      "thumbnailFile": "girl-code-evening-lecturer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "after-class"
+      },
+      "cheatCode": {
+        "id": "after-class",
+        "code": "AFTER-CLASS",
+        "badge": "课",
+        "unlockedMessage": "暗号确认。晚课导师已经为你留下教室。",
+        "activatedMessage": "暗号再次确认。晚课导师已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-neon-cyber",
+      "companionId": "girl",
+      "name": "霓虹义体",
+      "description": "她从数据裂隙中带回了一枚没有编号的密钥。",
+      "color": "#171b29",
+      "accent": "#35cce0",
+      "assetFile": "girl-code-neon-cyber.webp",
+      "thumbnailFile": "girl-code-neon-cyber.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "neon-cipher"
+      },
+      "cheatCode": {
+        "id": "neon-cipher",
+        "code": "NEON-CIPHER",
+        "badge": "霓",
+        "unlockedMessage": "暗号确认。霓虹义体已经完成接入。",
+        "activatedMessage": "暗号再次确认。霓虹义体已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-midnight-illusionist",
+      "companionId": "girl",
+      "name": "午夜魔术师",
+      "description": "午夜散场后，最后一场魔术只为暗号持有者上演。",
+      "color": "#171927",
+      "accent": "#315dc0",
+      "assetFile": "girl-code-midnight-illusionist.webp",
+      "thumbnailFile": "girl-code-midnight-illusionist.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "midnight-magic"
+      },
+      "cheatCode": {
+        "id": "midnight-magic",
+        "code": "MIDNIGHT-MAGIC",
+        "badge": "术",
+        "unlockedMessage": "暗号确认。午夜魔术师已经开始最后一场表演。",
+        "activatedMessage": "暗号再次确认。午夜魔术师已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-zero-researcher",
+      "companionId": "girl",
+      "name": "零度研究员",
+      "description": "她记录所有温度，却从未记录自己的情绪。",
+      "color": "#e8edf1",
+      "accent": "#72b9cf",
+      "assetFile": "girl-code-zero-researcher.webp",
+      "thumbnailFile": "girl-code-zero-researcher.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "absolute-zero"
+      },
+      "cheatCode": {
+        "id": "absolute-zero",
+        "code": "ABSOLUTE-ZERO",
+        "badge": "零",
+        "unlockedMessage": "暗号确认。零度研究员已经完成冷启动。",
+        "activatedMessage": "暗号再次确认。零度研究员已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-silent-command",
+      "companionId": "girl",
+      "name": "静默军官",
+      "description": "她不需要提高声音，命令本身就足够锋利。",
+      "color": "#24272d",
+      "accent": "#929aa5",
+      "assetFile": "girl-code-silent-command.webp",
+      "thumbnailFile": "girl-code-silent-command.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "silent-command"
+      },
+      "cheatCode": {
+        "id": "silent-command",
+        "code": "SILENT-COMMAND",
+        "badge": "令",
+        "unlockedMessage": "暗号确认。静默军官已经接管指挥席。",
+        "activatedMessage": "暗号再次确认。静默军官已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-black-swan",
+      "companionId": "girl",
+      "name": "黑天鹅首席",
+      "description": "散场以后，她仍在为无人看见的终幕系紧舞鞋。",
+      "color": "#171820",
+      "accent": "#7786ac",
+      "assetFile": "girl-code-black-swan.webp",
+      "thumbnailFile": "girl-code-black-swan.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "black-swan"
+      },
+      "cheatCode": {
+        "id": "black-swan",
+        "code": "BLACK-SWAN",
+        "badge": "舞",
+        "unlockedMessage": "暗号确认。黑天鹅首席已经系紧舞鞋。",
+        "activatedMessage": "暗号再次确认。黑天鹅首席已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-tribunal-clerk",
+      "companionId": "girl",
+      "name": "审判庭书记官",
+      "description": "你的辩解，她已经替你从判词里删掉了。",
+      "color": "#2c292d",
+      "accent": "#8d313c",
+      "assetFile": "girl-code-tribunal-clerk.webp",
+      "thumbnailFile": "girl-code-tribunal-clerk.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "final-verdict"
+      },
+      "cheatCode": {
+        "id": "final-verdict",
+        "code": "FINAL-VERDICT",
+        "badge": "判",
+        "unlockedMessage": "暗号确认。审判庭书记官已经写下最终判词。",
+        "activatedMessage": "暗号再次确认。审判庭书记官已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-zone-diver",
+      "companionId": "girl",
+      "name": "禁区潜航员",
+      "description": "她刚从无人抵达的深度归来，却没有带回解释。",
+      "color": "#102d3b",
+      "accent": "#30b9d2",
+      "assetFile": "girl-code-zone-diver.webp",
+      "thumbnailFile": "girl-code-zone-diver.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "abyss-dive"
+      },
+      "cheatCode": {
+        "id": "abyss-dive",
+        "code": "ABYSS-DIVE",
+        "badge": "潜",
+        "unlockedMessage": "暗号确认。禁区潜航员已经从深处浮出。",
+        "activatedMessage": "暗号再次确认。禁区潜航员已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-rain-thief",
+      "companionId": "girl",
+      "name": "雨夜怪盗",
+      "description": "雨停以前，她已经带着最后一个秘密离场。",
+      "color": "#201b22",
+      "accent": "#7c3345",
+      "assetFile": "girl-code-rain-thief.webp",
+      "thumbnailFile": "girl-code-rain-thief.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "rain-night"
+      },
+      "cheatCode": {
+        "id": "rain-night",
+        "code": "RAIN-NIGHT",
+        "badge": "盗",
+        "unlockedMessage": "暗号确认。雨夜怪盗已经完成今晚的委托。",
+        "activatedMessage": "暗号再次确认。雨夜怪盗已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-day-inspector",
+      "companionId": "girl",
+      "name": "白昼监察医",
+      "description": "金色镜片掠过数据，她已经发现了藏在沉默里的异常。",
+      "color": "#ebecef",
+      "accent": "#c18b55",
+      "assetFile": "girl-code-day-inspector.webp",
+      "thumbnailFile": "girl-code-day-inspector.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "day-inspection"
+      },
+      "cheatCode": {
+        "id": "day-inspection",
+        "code": "DAY-INSPECTION",
+        "badge": "检",
+        "unlockedMessage": "暗号确认。白昼监察医已经完成身份核验。",
+        "activatedMessage": "暗号再次确认。白昼监察医已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-polar-sonar",
+      "companionId": "girl",
+      "name": "极夜声呐官",
+      "description": "她在极夜里监听回声，也监听那些没有说出口的话。",
+      "color": "#102532",
+      "accent": "#3fb8e4",
+      "assetFile": "girl-code-polar-sonar.webp",
+      "thumbnailFile": "girl-code-polar-sonar.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "polar-sonar"
+      },
+      "cheatCode": {
+        "id": "polar-sonar",
+        "code": "POLAR-SONAR",
+        "badge": "声",
+        "unlockedMessage": "暗号确认。极夜声呐官已经捕获你的信号。",
+        "activatedMessage": "暗号再次确认。极夜声呐官已切换到桌面。"
+      }
+    },
+    {
+      "id": "girl-code-silent-observer",
+      "companionId": "girl",
+      "name": "静默观测官",
+      "description": "她把双手藏在身后，目光却从未离开观测目标。",
+      "color": "#e8ebef",
+      "accent": "#8b98a8",
+      "assetFile": "girl-code-silent-observer.webp",
+      "thumbnailFile": "girl-code-silent-observer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "silent-orbit"
+      },
+      "cheatCode": {
+        "id": "silent-orbit",
+        "code": "SILENT-ORBIT",
+        "badge": "轨",
+        "unlockedMessage": "暗号确认。静默观测官已经锁定你的坐标。",
+        "activatedMessage": "暗号再次确认。静默观测官已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-default",
+      "companionId": "rabbit",
+      "name": "初见长耳装",
+      "description": "为长耳朵留出舒适位置的日常装束。",
+      "color": "#ad8fca",
+      "accent": "#eee5f8",
+      "assetFile": "rabbit-default.webp",
+      "thumbnailFile": "rabbit-default.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "rabbit-courier",
+      "companionId": "rabbit",
+      "name": "胡萝卜快递员",
+      "description": "包裹会准时到，胡萝卜不一定。",
+      "color": "#d77846",
+      "accent": "#ffe0b7",
+      "assetFile": "rabbit-courier.webp",
+      "thumbnailFile": "rabbit-courier.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "rabbit-moon",
+      "companionId": "rabbit",
+      "name": "月宫旅人",
+      "description": "衣角像月光一样轻。",
+      "color": "#7d90bd",
+      "accent": "#eef4ff",
+      "assetFile": "rabbit-moon.webp",
+      "thumbnailFile": "rabbit-moon.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "boy-exchange-01",
+      "companionId": "boy",
+      "name": "午后侦探",
+      "description": "放大镜里藏着一个比午后更明亮的答案。",
+      "color": "#31584f",
+      "accent": "#d3ab6e",
+      "assetFile": "boy-exchange-01.webp",
+      "thumbnailFile": "boy-exchange-01.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "girl-exchange-01",
+      "companionId": "girl",
+      "name": "草莓茶会",
+      "description": "今天的茶杯里，盛着一点草莓味的好心情。",
+      "color": "#b95f70",
+      "accent": "#f7ddd7",
+      "assetFile": "girl-exchange-01.webp",
+      "thumbnailFile": "girl-exchange-01.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "rabbit-exchange-01",
+      "companionId": "rabbit",
+      "name": "午夜侍奉",
+      "description": "黑白裙摆随着她俏皮的动作轻轻摇晃。",
+      "color": "#322832",
+      "accent": "#8f2947",
+      "assetFile": "rabbit-exchange-01.webp",
+      "thumbnailFile": "rabbit-exchange-01.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "rabbit-exchange-02",
+      "companionId": "rabbit",
+      "name": "绯线秘仪",
+      "description": "绯红丝带沿着珍珠白衣装勾勒出神秘仪式的轮廓。",
+      "color": "#f0e7e2",
+      "accent": "#aa1f2e",
+      "assetFile": "rabbit-exchange-02.webp",
+      "thumbnailFile": "rabbit-exchange-02.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "rabbit-code-asuka",
+      "companionId": "rabbit",
+      "name": "二号机驾驶员",
+      "description": "只回应那个与二号机有关的暗号。",
+      "color": "#d93628",
+      "accent": "#f39a38",
+      "assetFile": "rabbit-code-asuka.webp",
+      "thumbnailFile": "rabbit-code-asuka.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "eva-unit-02"
+      },
+      "cheatCode": {
+        "id": "eva-unit-02",
+        "code": "EVA-02-ASUKA",
+        "badge": "02",
+        "unlockedMessage": "暗号确认。二号机驾驶员已经来到桌面。",
+        "activatedMessage": "暗号再次确认。二号机驾驶员已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-night-net",
+      "companionId": "rabbit",
+      "name": "夜网猎手",
+      "description": "夜色落在渔网上，她也收起了平日里的温顺。",
+      "color": "#1e1a24",
+      "accent": "#a72848",
+      "assetFile": "rabbit-code-night-net.webp",
+      "thumbnailFile": "rabbit-code-night-net.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "night-net"
+      },
+      "cheatCode": {
+        "id": "night-net",
+        "code": "NIGHT-NET",
+        "badge": "网",
+        "unlockedMessage": "暗号确认。夜网猎手已经来到桌面。",
+        "activatedMessage": "暗号再次确认。夜网猎手已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-golden-oracle",
+      "companionId": "rabbit",
+      "name": "黄金神谕",
+      "description": "她托起金苹果，也托起一段只属于你的神谕。",
+      "color": "#f0e6cf",
+      "accent": "#c69a35",
+      "assetFile": "rabbit-code-golden-oracle.webp",
+      "thumbnailFile": "rabbit-code-golden-oracle.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "golden-apple"
+      },
+      "cheatCode": {
+        "id": "golden-apple",
+        "code": "GOLDEN-APPLE",
+        "badge": "神",
+        "unlockedMessage": "暗号确认。黄金神谕已经降临桌面。",
+        "activatedMessage": "暗号再次确认。黄金神谕已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-sky-valkyrie",
+      "companionId": "rabbit",
+      "name": "天穹战姬",
+      "description": "她单膝落在云端，把破晓挡在盾牌之外。",
+      "color": "#e9edf2",
+      "accent": "#6e9cc5",
+      "assetFile": "rabbit-code-sky-valkyrie.webp",
+      "thumbnailFile": "rabbit-code-sky-valkyrie.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "valkyrie-dawn"
+      },
+      "cheatCode": {
+        "id": "valkyrie-dawn",
+        "code": "VALKYRIE-DAWN",
+        "badge": "翼",
+        "unlockedMessage": "暗号确认。天穹战姬已经踏云而来。",
+        "activatedMessage": "暗号再次确认。天穹战姬已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-fox-oracle",
+      "companionId": "rabbit",
+      "name": "狐火神使",
+      "description": "五尾拢住暮色，铃声只为一个暗号响起。",
+      "color": "#f5eee8",
+      "accent": "#c83f37",
+      "assetFile": "rabbit-code-fox-oracle.webp",
+      "thumbnailFile": "rabbit-code-fox-oracle.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "fox-fire"
+      },
+      "cheatCode": {
+        "id": "fox-fire",
+        "code": "FOX-FIRE",
+        "badge": "狐",
+        "unlockedMessage": "暗号确认。狐火神使已经循铃而来。",
+        "activatedMessage": "暗号再次确认。狐火神使已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-snow-bride",
+      "companionId": "rabbit",
+      "name": "雪国新娘",
+      "description": "她背对所有祝福，只在雪停时回望一次。",
+      "color": "#eef3f5",
+      "accent": "#a9c6d9",
+      "assetFile": "rabbit-code-snow-bride.webp",
+      "thumbnailFile": "rabbit-code-snow-bride.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "snow-bride"
+      },
+      "cheatCode": {
+        "id": "snow-bride",
+        "code": "SNOW-BRIDE",
+        "badge": "雪",
+        "unlockedMessage": "暗号确认。雪国新娘已经在冰面回望。",
+        "activatedMessage": "暗号再次确认。雪国新娘已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-sterile-physician",
+      "companionId": "rabbit",
+      "name": "无菌医师",
+      "description": "她记录每一次心跳，却从不解释自己的沉默。",
+      "color": "#e9edf0",
+      "accent": "#62abc4",
+      "assetFile": "rabbit-code-sterile-physician.webp",
+      "thumbnailFile": "rabbit-code-sterile-physician.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "sterile-protocol"
+      },
+      "cheatCode": {
+        "id": "sterile-protocol",
+        "code": "STERILE-PROTOCOL",
+        "badge": "医",
+        "unlockedMessage": "暗号确认。无菌医师已经完成今日巡诊。",
+        "activatedMessage": "暗号再次确认。无菌医师已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-frost-sniper",
+      "companionId": "rabbit",
+      "name": "霜线狙击手",
+      "description": "寒风越过准星时，她已经重新计算了结局。",
+      "color": "#e8edf2",
+      "accent": "#4d96bf",
+      "assetFile": "rabbit-code-frost-sniper.webp",
+      "thumbnailFile": "rabbit-code-frost-sniper.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "frostline"
+      },
+      "cheatCode": {
+        "id": "frostline",
+        "code": "FROSTLINE",
+        "badge": "霜",
+        "unlockedMessage": "暗号确认。霜线狙击手已经锁定目标。",
+        "activatedMessage": "暗号再次确认。霜线狙击手已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-frost-prayer",
+      "companionId": "rabbit",
+      "name": "霜白祈礼",
+      "description": "她低下眼帘，把无人知晓的愿望藏进银白衣褶。",
+      "color": "#f0f1f3",
+      "accent": "#a9b3c1",
+      "assetFile": "rabbit-code-frost-prayer.webp",
+      "thumbnailFile": "rabbit-code-frost-prayer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "frost-prayer"
+      },
+      "cheatCode": {
+        "id": "frost-prayer",
+        "code": "FROST-PRAYER",
+        "badge": "祈",
+        "unlockedMessage": "暗号确认。霜白祈礼已经回应你的愿望。",
+        "activatedMessage": "暗号再次确认。霜白祈礼已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-frost-envoy",
+      "companionId": "rabbit",
+      "name": "霜讯使者",
+      "description": "她难得抬手问候，冷淡目光里多了一点温度。",
+      "color": "#edf1f5",
+      "accent": "#83b7d5",
+      "assetFile": "rabbit-code-frost-envoy.webp",
+      "thumbnailFile": "rabbit-code-frost-envoy.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "frost-signal"
+      },
+      "cheatCode": {
+        "id": "frost-signal",
+        "code": "FROST-SIGNAL",
+        "badge": "讯",
+        "unlockedMessage": "暗号确认。霜讯使者已经向你发出问候。",
+        "activatedMessage": "暗号再次确认。霜讯使者已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-default",
+      "companionId": "mystery",
+      "name": "门后初见",
+      "description": "她从最后一扇门后走来，安静地留在了桌面上。",
+      "color": "#6f6a82",
+      "accent": "#d9d3e6",
+      "assetFile": "mystery-default.webp",
+      "thumbnailFile": "mystery-default.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "mystery-map-01",
+      "companionId": "mystery",
+      "name": "星渊骑士",
+      "description": "她披上星夜铸成的甲胄，守在最后一扇门前。",
+      "color": "#292940",
+      "accent": "#b69555",
+      "assetFile": "mystery-map-01.webp",
+      "thumbnailFile": "mystery-map-01.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "mystery-exchange-01",
+      "companionId": "mystery",
+      "name": "夜幕私语",
+      "description": "褪去守门人的距离后，夜色也变得柔软了一些。",
+      "color": "#30233f",
+      "accent": "#b79acb",
+      "assetFile": "mystery-exchange-01.webp",
+      "thumbnailFile": "mystery-exchange-01.webp",
+      "identityMode": "preserve",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "initial"
+      }
+    },
+    {
+      "id": "mystery-code-confession",
+      "companionId": "mystery",
+      "name": "黑纱告解",
+      "description": "黑纱垂落时，告解只会留在门后。",
+      "color": "#18171d",
+      "accent": "#d1b77d",
+      "assetFile": "mystery-code-confession.webp",
+      "thumbnailFile": "mystery-code-confession.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "black-confession"
+      },
+      "cheatCode": {
+        "id": "black-confession",
+        "code": "BLACK-CONFESSION",
+        "badge": "祷",
+        "unlockedMessage": "暗号确认。黑纱告解已经来到桌面。",
+        "activatedMessage": "暗号再次确认。黑纱告解已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-moon-tide",
+      "companionId": "mystery",
+      "name": "月潮祭司",
+      "description": "她从月光与潮水交界处醒来。",
+      "color": "#244f56",
+      "accent": "#dce7da",
+      "assetFile": "mystery-code-moon-tide.webp",
+      "thumbnailFile": "mystery-code-moon-tide.webp",
+      "identityMode": "roleplay",
+      "renderMode": "backdrop",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "moon-tide"
+      },
+      "cheatCode": {
+        "id": "moon-tide",
+        "code": "MOON-TIDE",
+        "badge": "潮",
+        "unlockedMessage": "暗号确认。月潮祭司已经从潮水中醒来。",
+        "activatedMessage": "暗号再次确认。月潮祭司已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-amethyst-moon",
+      "companionId": "mystery",
+      "name": "紫晶魅影",
+      "description": "紫焰点亮时，门后的月牙也有了心跳。",
+      "color": "#25172d",
+      "accent": "#9e49ca",
+      "assetFile": "mystery-code-amethyst-moon.webp",
+      "thumbnailFile": "mystery-code-amethyst-moon.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "amethyst-moon"
+      },
+      "cheatCode": {
+        "id": "amethyst-moon",
+        "code": "AMETHYST-MOON",
+        "badge": "魅",
+        "unlockedMessage": "暗号确认。紫晶魅影已经坐上月牙。",
+        "activatedMessage": "暗号再次确认。紫晶魅影已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-crimson-countess",
+      "companionId": "mystery",
+      "name": "永夜伯爵",
+      "description": "她举杯邀请夜色，也邀请唯一知晓暗号的人。",
+      "color": "#1d1218",
+      "accent": "#a31f36",
+      "assetFile": "mystery-code-crimson-countess.webp",
+      "thumbnailFile": "mystery-code-crimson-countess.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "crimson-night"
+      },
+      "cheatCode": {
+        "id": "crimson-night",
+        "code": "CRIMSON-NIGHT",
+        "badge": "血",
+        "unlockedMessage": "暗号确认。永夜伯爵已经举杯赴约。",
+        "activatedMessage": "暗号再次确认。永夜伯爵已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-nile-queen",
+      "companionId": "mystery",
+      "name": "尼罗王后",
+      "description": "蓝莲花盛开时，沉睡的古老王座再次苏醒。",
+      "color": "#e8dfc8",
+      "accent": "#166a9d",
+      "assetFile": "mystery-code-nile-queen.webp",
+      "thumbnailFile": "mystery-code-nile-queen.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "nile-queen"
+      },
+      "cheatCode": {
+        "id": "nile-queen",
+        "code": "NILE-QUEEN",
+        "badge": "莲",
+        "unlockedMessage": "暗号确认。尼罗王后已经在蓝莲旁醒来。",
+        "activatedMessage": "暗号再次确认。尼罗王后已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-black-tide-captain",
+      "companionId": "mystery",
+      "name": "黑潮船长",
+      "description": "她踩住宝箱，也踩住了黑潮最后的秘密。",
+      "color": "#173d3e",
+      "accent": "#b88443",
+      "assetFile": "mystery-code-black-tide-captain.webp",
+      "thumbnailFile": "mystery-code-black-tide-captain.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "black-tide"
+      },
+      "cheatCode": {
+        "id": "black-tide",
+        "code": "BLACK-TIDE",
+        "badge": "潮",
+        "unlockedMessage": "暗号确认。黑潮船长已经带着宝箱靠岸。",
+        "activatedMessage": "暗号再次确认。黑潮船长已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-white-porcelain",
+      "companionId": "mystery",
+      "name": "白瓷人偶",
+      "description": "她安静地坐着，等待一条从未写入程序的指令。",
+      "color": "#ecebea",
+      "accent": "#9ca1a6",
+      "assetFile": "mystery-code-white-porcelain.webp",
+      "thumbnailFile": "mystery-code-white-porcelain.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "white-porcelain"
+      },
+      "cheatCode": {
+        "id": "white-porcelain",
+        "code": "WHITE-PORCELAIN",
+        "badge": "瓷",
+        "unlockedMessage": "暗号确认。白瓷人偶已经从展台醒来。",
+        "activatedMessage": "暗号再次确认。白瓷人偶已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-last-conductor",
+      "companionId": "mystery",
+      "name": "末班列车长",
+      "description": "她举起最后一张车票，终点站却没有写在上面。",
+      "color": "#171d2c",
+      "accent": "#b69252",
+      "assetFile": "mystery-code-last-conductor.webp",
+      "thumbnailFile": "mystery-code-last-conductor.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "last-train"
+      },
+      "cheatCode": {
+        "id": "last-train",
+        "code": "LAST-TRAIN",
+        "badge": "轨",
+        "unlockedMessage": "暗号确认。末班列车长已经为你保留车票。",
+        "activatedMessage": "暗号再次确认。末班列车长已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-moon-funeral",
+      "companionId": "mystery",
+      "name": "月下殡仪师",
+      "description": "银百合仍然新鲜，送别的人却没有名字。",
+      "color": "#1d1922",
+      "accent": "#85759b",
+      "assetFile": "mystery-code-moon-funeral.webp",
+      "thumbnailFile": "mystery-code-moon-funeral.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "moon-funeral"
+      },
+      "cheatCode": {
+        "id": "moon-funeral",
+        "code": "MOON-FUNERAL",
+        "badge": "礼",
+        "unlockedMessage": "暗号确认。月下殡仪师已经放下银百合。",
+        "activatedMessage": "暗号再次确认。月下殡仪师已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-offering-blade",
+      "companionId": "mystery",
+      "name": "献刀巫女",
+      "description": "她双手奉上的不是刀，而是一场尚未开始的仪式。",
+      "color": "#f0e9e4",
+      "accent": "#a81e2b",
+      "assetFile": "mystery-code-offering-blade.webp",
+      "thumbnailFile": "mystery-code-offering-blade.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "offering-blade"
+      },
+      "cheatCode": {
+        "id": "offering-blade",
+        "code": "OFFERING-BLADE",
+        "badge": "仪",
+        "unlockedMessage": "暗号确认。献刀巫女已经开始无声的仪式。",
+        "activatedMessage": "暗号再次确认。献刀巫女已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-rain-swordswoman",
+      "companionId": "mystery",
+      "name": "雨夜剑客",
+      "description": "雨水洗去来路，她只把未尽的话留在归鞘声里。",
+      "color": "#171d25",
+      "accent": "#8ba6bd",
+      "assetFile": "mystery-code-rain-swordswoman.webp",
+      "thumbnailFile": "mystery-code-rain-swordswoman.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "rain-blade"
+      },
+      "cheatCode": {
+        "id": "rain-blade",
+        "code": "RAIN-BLADE",
+        "badge": "剑",
+        "unlockedMessage": "暗号确认。雨夜剑客已经在檐上收刀。",
+        "activatedMessage": "暗号再次确认。雨夜剑客已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-starship-silver",
+      "companionId": "mystery",
+      "name": "银轨执行官",
+      "description": "审讯结束以前，星舰不会偏离她划定的航线。",
+      "color": "#151b28",
+      "accent": "#55bfe4",
+      "assetFile": "mystery-code-starship-silver.webp",
+      "thumbnailFile": "mystery-code-starship-silver.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "starship-silver"
+      },
+      "cheatCode": {
+        "id": "starship-silver",
+        "code": "STARSHIP-SILVER",
+        "badge": "银",
+        "unlockedMessage": "暗号确认。银轨执行官已经接管星舰指挥席。",
+        "activatedMessage": "暗号再次确认。银轨执行官已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-starship-teal",
+      "companionId": "mystery",
+      "name": "青环执行官",
+      "description": "三道光环校准坐标，她沉默着等待唯一正确的回答。",
+      "color": "#17252c",
+      "accent": "#60d4dd",
+      "assetFile": "mystery-code-starship-teal.webp",
+      "thumbnailFile": "mystery-code-starship-teal.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "starship-teal"
+      },
+      "cheatCode": {
+        "id": "starship-teal",
+        "code": "STARSHIP-TEAL",
+        "badge": "环",
+        "unlockedMessage": "暗号确认。青环执行官已经完成坐标校准。",
+        "activatedMessage": "暗号再次确认。青环执行官已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-hypothermia-bride",
+      "companionId": "mystery",
+      "name": "失温新娘",
+      "description": "冰阶尽头没有婚礼，只有一束迟迟没有枯尽的白花。",
+      "color": "#e8edf2",
+      "accent": "#9ebed4",
+      "assetFile": "mystery-code-hypothermia-bride.webp",
+      "thumbnailFile": "mystery-code-hypothermia-bride.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "hypothermia-bride"
+      },
+      "cheatCode": {
+        "id": "hypothermia-bride",
+        "code": "HYPOTHERMIA-BRIDE",
+        "badge": "冰",
+        "unlockedMessage": "暗号确认。失温新娘已经在冰阶尽头醒来。",
+        "activatedMessage": "暗号再次确认。失温新娘已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-abyssal-mermaid",
+      "companionId": "mystery",
+      "name": "深渊人鱼",
+      "description": "她在无光之海托起微光，也托起一段被海水忘记的语言。",
+      "color": "#12333d",
+      "accent": "#52c5ca",
+      "assetFile": "mystery-code-abyssal-mermaid.webp",
+      "thumbnailFile": "mystery-code-abyssal-mermaid.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "abyssal-mermaid"
+      },
+      "cheatCode": {
+        "id": "abyssal-mermaid",
+        "code": "ABYSSAL-MERMAID",
+        "badge": "鳞",
+        "unlockedMessage": "暗号确认。深渊人鱼已经循着微光浮出海面。",
+        "activatedMessage": "暗号再次确认。深渊人鱼已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-doll-restorer",
+      "companionId": "mystery",
+      "name": "人偶修复师",
+      "description": "红线穿过裂痕，她仍不确定修复的是谁。",
+      "color": "#e6e5e3",
+      "accent": "#9d2936",
+      "assetFile": "mystery-code-doll-restorer.webp",
+      "thumbnailFile": "mystery-code-doll-restorer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "doll-repair"
+      },
+      "cheatCode": {
+        "id": "doll-repair",
+        "code": "DOLL-REPAIR",
+        "badge": "线",
+        "unlockedMessage": "暗号确认。人偶修复师已经穿过第一根红线。",
+        "activatedMessage": "暗号再次确认。人偶修复师已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-eclipse-minister",
+      "companionId": "mystery",
+      "name": "月蚀神官",
+      "description": "月影落在银扇上，她仍守着无人知晓的旧仪式。",
+      "color": "#e9e9eb",
+      "accent": "#626772",
+      "assetFile": "mystery-code-eclipse-minister.webp",
+      "thumbnailFile": "mystery-code-eclipse-minister.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "eclipse-rite"
+      },
+      "cheatCode": {
+        "id": "eclipse-rite",
+        "code": "ECLIPSE-RITE",
+        "badge": "蚀",
+        "unlockedMessage": "暗号确认。月蚀神官已经展开银扇。",
+        "activatedMessage": "暗号再次确认。月蚀神官已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-white-tower",
+      "companionId": "mystery",
+      "name": "白塔审判官",
+      "description": "白塔没有钟声，她的裁决就是唯一的报时。",
+      "color": "#eceef1",
+      "accent": "#697583",
+      "assetFile": "mystery-code-white-tower.webp",
+      "thumbnailFile": "mystery-code-white-tower.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "white-tower"
+      },
+      "cheatCode": {
+        "id": "white-tower",
+        "code": "WHITE-TOWER",
+        "badge": "塔",
+        "unlockedMessage": "暗号确认。白塔审判官已经写下裁决。",
+        "activatedMessage": "暗号再次确认。白塔审判官已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-velvet-conductor",
+      "companionId": "mystery",
+      "name": "绯幕指挥家",
+      "description": "绯色帷幕落下以前，她仍掌握着最后一个休止符。",
+      "color": "#21171c",
+      "accent": "#9d2940",
+      "assetFile": "mystery-code-velvet-conductor.webp",
+      "thumbnailFile": "mystery-code-velvet-conductor.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "velvet-curtain"
+      },
+      "cheatCode": {
+        "id": "velvet-curtain",
+        "code": "VELVET-CURTAIN",
+        "badge": "幕",
+        "unlockedMessage": "暗号确认。绯幕指挥家已经举起指挥棒。",
+        "activatedMessage": "暗号再次确认。绯幕指挥家已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-verdict-boxer",
+      "companionId": "rabbit",
+      "name": "终审拳姬",
+      "description": "裁决落槌以后，她用缠带重新确认每一份力量的分量。",
+      "color": "#20191d",
+      "accent": "#a83245",
+      "assetFile": "rabbit-code-verdict-boxer.webp",
+      "thumbnailFile": "rabbit-code-verdict-boxer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "verdict-ring"
+      },
+      "cheatCode": {
+        "id": "verdict-ring",
+        "code": "VERDICT-RING",
+        "badge": "裁",
+        "unlockedMessage": "兑换码确认。终审拳姬已经解开手上的绯色缠带。",
+        "activatedMessage": "兑换码再次确认。终审拳姬已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-sanctum-mechanic",
+      "companionId": "rabbit",
+      "name": "圣堂机修师",
+      "description": "白纱沾着机油，她却让沉默百年的钟重新走准。",
+      "color": "#e7e3d8",
+      "accent": "#b28a45",
+      "assetFile": "rabbit-code-sanctum-mechanic.webp",
+      "thumbnailFile": "rabbit-code-sanctum-mechanic.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "sanctum-wrench"
+      },
+      "cheatCode": {
+        "id": "sanctum-wrench",
+        "code": "SANCTUM-WRENCH",
+        "badge": "械",
+        "unlockedMessage": "兑换码确认。圣堂机修师已经完成最后一枚齿轮的校准。",
+        "activatedMessage": "兑换码再次确认。圣堂机修师已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-greenhouse-toxicologist",
+      "companionId": "rabbit",
+      "name": "温室毒理师",
+      "description": "她温柔地托起白花，也从不忽略花蕊里危险的微量反应。",
+      "color": "#18271f",
+      "accent": "#738f54",
+      "assetFile": "rabbit-code-greenhouse-toxicologist.webp",
+      "thumbnailFile": "rabbit-code-greenhouse-toxicologist.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "glasshouse-antidote"
+      },
+      "cheatCode": {
+        "id": "glasshouse-antidote",
+        "code": "GLASSHOUSE-ANTIDOTE",
+        "badge": "花",
+        "unlockedMessage": "兑换码确认。温室毒理师已经封存最后一份样本。",
+        "activatedMessage": "兑换码再次确认。温室毒理师已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-midnight-anchor",
+      "companionId": "mystery",
+      "name": "零点主播",
+      "description": "提词器熄灭以后，她才开始播报真正不能被删去的消息。",
+      "color": "#161d32",
+      "accent": "#8e2945",
+      "assetFile": "mystery-code-midnight-anchor.webp",
+      "thumbnailFile": "mystery-code-midnight-anchor.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "midnight-broadcast"
+      },
+      "cheatCode": {
+        "id": "midnight-broadcast",
+        "code": "MIDNIGHT-BROADCAST",
+        "badge": "播",
+        "unlockedMessage": "兑换码确认。零点主播已经接通信号。",
+        "activatedMessage": "兑换码再次确认。零点主播已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-funeral-dj",
+      "companionId": "mystery",
+      "name": "葬仪唱片师",
+      "description": "她把告别刻进唱片，却总在最后一轨留下继续生活的节拍。",
+      "color": "#15131c",
+      "accent": "#74538f",
+      "assetFile": "mystery-code-funeral-dj.webp",
+      "thumbnailFile": "mystery-code-funeral-dj.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "funeral-vinyl"
+      },
+      "cheatCode": {
+        "id": "funeral-vinyl",
+        "code": "FUNERAL-VINYL",
+        "badge": "音",
+        "unlockedMessage": "兑换码确认。葬仪唱片师已经放下唱针。",
+        "activatedMessage": "兑换码再次确认。葬仪唱片师已切换到桌面。"
+      }
+    }
+  ]
+}
