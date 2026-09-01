@@ -5,7 +5,8 @@ import type { CompanionId } from '../../core/companions/types';
 import { APPEARANCE_BY_ID, COMPANION_BY_ID } from '../../core/companions/registry';
 import { extractUserFact, makeFirstChatMemory } from '../../core/memory/extraction';
 import { useAppState } from '../../core/persistence/store';
-import { deepSeekProvider, readableProviderError } from '../../platform/ai/deepseek';
+import { remoteAiProviders } from '../../platform/ai/providers';
+import { readableProviderError } from '../../platform/ai/runtime';
 
 const HISTORY_KEY = 'foedesk-chat-history-v1';
 const MAX_MESSAGES = 40;
@@ -46,9 +47,10 @@ export function useCompanionChat(companionId: CompanionId) {
     setError('');
     try {
       let responseContent: string;
-      if (state.settings.aiProviderId === 'deepseek') {
-        const response = await deepSeekProvider.complete({
-          model: state.settings.aiModel,
+      if (state.settings.aiProviderId !== 'local') {
+        const providerId = state.settings.aiProviderId;
+        const response = await remoteAiProviders[providerId].complete({
+          model: state.settings.aiModels[providerId],
           messages: [
             { role: 'system', content: buildSystemPrompt(state, companionId, content) },
             ...next.slice(-MAX_CONTEXT_MESSAGES).map((message) => ({ role: message.role, content: message.content } as const)),

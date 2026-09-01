@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type PropsWithChildren } from 'react';
 import { APPEARANCE_BY_ID, COMPANION_BY_ID } from '../companions/registry';
-import type { AppState, AppearancePersona, BackendTheme, CompanionId, CompanionReaction, MemoryEntry } from '../companions/types';
+import type { AiProviderId, AppState, AppearancePersona, BackendTheme, CompanionId, CompanionReaction, MemoryEntry } from '../companions/types';
 import { applyInteraction } from '../interactions/engine';
 import type { InteractionEvent } from '../interactions/events';
 import { parseHiddenCodes } from '../unlocks/hiddenCodes';
@@ -24,7 +24,7 @@ interface AppStateContextValue {
   setAlwaysOnTop: (enabled: boolean) => void;
   setRemindersEnabled: (enabled: boolean) => void;
   setBackendTheme: (theme: BackendTheme) => void;
-  setAiSettings: (providerId: 'local' | 'deepseek', model?: string) => void;
+  setAiSettings: (providerId: AiProviderId, model?: string) => void;
   interact: (event: InteractionEvent) => CompanionReaction;
   clearReaction: () => void;
   redeemHiddenCodes: (input: string) => UnlockResult | null;
@@ -90,10 +90,19 @@ export function AppStateProvider({ children }: PropsWithChildren) {
     setAlwaysOnTop: (enabled) => setState((current) => current.settings.alwaysOnTop === enabled ? current : { ...current, settings: { ...current.settings, alwaysOnTop: enabled } }),
     setRemindersEnabled: (enabled) => setState((current) => ({ ...current, settings: { ...current.settings, remindersEnabled: enabled } })),
     setBackendTheme: (theme) => setState((current) => ({ ...current, settings: { ...current.settings, backendTheme: theme } })),
-    setAiSettings: (providerId, model) => setState((current) => ({
-      ...current,
-      settings: { ...current.settings, aiProviderId: providerId, aiModel: model?.trim().slice(0, 100) || current.settings.aiModel },
-    })),
+    setAiSettings: (providerId, model) => setState((current) => {
+      const normalizedModel = model?.trim().slice(0, 100);
+      return {
+        ...current,
+        settings: {
+          ...current.settings,
+          aiProviderId: providerId,
+          aiModels: providerId !== 'local' && normalizedModel
+            ? { ...current.settings.aiModels, [providerId]: normalizedModel }
+            : current.settings.aiModels,
+        },
+      };
+    }),
     interact: (event) => {
       const result = applyInteraction(state, event);
       setState(result.state);

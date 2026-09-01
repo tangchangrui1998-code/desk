@@ -7,7 +7,7 @@ import type { AppearanceDefinition } from '../../core/companions/types';
 import { claimDuePrompt } from '../../core/schedule/prompts';
 import { useAppState } from '../../core/persistence/store';
 import { createDragGesture, crossedDragThreshold, type DragGesture } from '../../platform/window/drag';
-import { deepSeekProvider } from '../../platform/ai/deepseek';
+import { remoteAiProviders } from '../../platform/ai/providers';
 import type { PetScale } from '../../platform/window/layout';
 import { closeWindow, startWindowDragging } from '../../platform/window/runtime';
 import { PetChatPanel } from '../chat/PetChatPanel';
@@ -47,16 +47,17 @@ export function DesktopPet({ mode, scale, onModeChange, onScaleChange }: {
     const triggerProactiveGreeting = async () => {
       const snapshot = latestState.current;
       const at = Date.now();
-      if (snapshot.settings.aiProviderId !== 'deepseek') {
+      if (snapshot.settings.aiProviderId === 'local') {
         latestInteract.current({ type: 'idle_elapsed', minutes: 5, at });
         return;
       }
       if (proactiveRequestInFlight.current) return;
       proactiveRequestInFlight.current = true;
       const companionId = snapshot.activeCompanionId;
+      const providerId = snapshot.settings.aiProviderId;
       try {
-        const response = await deepSeekProvider.complete({
-          model: snapshot.settings.aiModel,
+        const response = await remoteAiProviders[providerId].complete({
+          model: snapshot.settings.aiModels[providerId],
           messages: [
             { role: 'system', content: buildProactiveSystemPrompt(snapshot, companionId, new Date(at)) },
             { role: 'user', content: '现在自然地向用户主动说一句话。只输出问候正文。' },
@@ -64,7 +65,7 @@ export function DesktopPet({ mode, scale, onModeChange, onScaleChange }: {
         });
         const current = latestState.current;
         if (!current.settings.remindersEnabled
-          || current.settings.aiProviderId !== 'deepseek'
+          || current.settings.aiProviderId !== providerId
           || current.activeCompanionId !== companionId) return;
         const content = normalizeProactiveGreeting(response.content);
         latestInteract.current(content
@@ -73,7 +74,9 @@ export function DesktopPet({ mode, scale, onModeChange, onScaleChange }: {
       } catch (error) {
         console.warn('[proactive] Failed to generate a greeting; using local dialogue.', error);
         const current = latestState.current;
-        if (current.settings.remindersEnabled && current.activeCompanionId === companionId) {
+        if (current.settings.remindersEnabled
+          && current.settings.aiProviderId === providerId
+          && current.activeCompanionId === companionId) {
           latestInteract.current({ type: 'idle_elapsed', minutes: 5, at: Date.now() });
         }
       } finally {

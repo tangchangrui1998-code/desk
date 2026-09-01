@@ -18,13 +18,13 @@ THUMBS = ROOT / "app/src/assets/thumbnails"
 def main() -> None:
     entries = json.loads(MANIFEST.read_text(encoding="utf-8"))["appearances"]
     errors: list[str] = []
-    if len(entries) != 66:
-        errors.append(f"expected 66 manifest entries, found {len(entries)}")
+    if len(entries) != 81:
+        errors.append(f"expected 81 manifest entries, found {len(entries)}")
     if len({entry["id"] for entry in entries}) != len(entries):
         errors.append("appearance IDs are not unique")
     hidden = [entry for entry in entries if entry["unlock"]["type"] == "hidden-code"]
-    if len(hidden) != 50:
-        errors.append(f"expected 50 hidden appearances, found {len(hidden)}")
+    if len(hidden) != 65:
+        errors.append(f"expected 65 hidden appearances, found {len(hidden)}")
 
     for entry in entries:
         art = ART / entry["assetFile"]
@@ -49,7 +49,7 @@ def main() -> None:
     if extra_thumbs: errors.append(f"unregistered thumbnails: {sorted(extra_thumbs)}")
     if errors:
         raise SystemExit("\n".join(errors))
-    print("Validated 66 appearances, 66 runtime WebPs, 66 thumbnails, and 50 hidden codes.")
+    print("Validated 81 appearances, 81 runtime WebPs, 81 thumbnails, and 65 hidden codes.")
 
 
 if __name__ == "__main__":

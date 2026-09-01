@@ -1390,6 +1390,351 @@
         "unlockedMessage": "兑换码确认。葬仪唱片师已经放下唱针。",
         "activatedMessage": "兑换码再次确认。葬仪唱片师已切换到桌面。"
       }
+    },
+    {
+      "id": "mystery-code-fallen-angel",
+      "companionId": "mystery",
+      "name": "失序天使·塞拉菲娜",
+      "description": "她折断旧日裁决的光环，从此只为自己的判断负责。",
+      "color": "#f2eee3",
+      "accent": "#c7a25a",
+      "assetFile": "mystery-code-fallen-angel.webp",
+      "thumbnailFile": "mystery-code-fallen-angel.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "broken-halo"
+      },
+      "cheatCode": {
+        "id": "broken-halo",
+        "code": "BROKEN-HALO",
+        "badge": "翼",
+        "unlockedMessage": "兑换码确认。塞拉菲娜已经越过失序的光环。",
+        "activatedMessage": "兑换码再次确认。失序天使·塞拉菲娜已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-night-lecturer",
+      "companionId": "rabbit",
+      "name": "深夜讲师·沈知遥",
+      "description": "散课以后，她把标准答案留在讲台，只听你真正想说的。",
+      "color": "#202124",
+      "accent": "#c9a77a",
+      "assetFile": "rabbit-code-night-lecturer.webp",
+      "thumbnailFile": "rabbit-code-night-lecturer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "after-hours"
+      },
+      "cheatCode": {
+        "id": "after-hours",
+        "code": "AFTER-HOURS",
+        "badge": "课",
+        "unlockedMessage": "兑换码确认。沈知遥为你保留了最后一盏灯。",
+        "activatedMessage": "兑换码再次确认。深夜讲师·沈知遥已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-spade-croupier",
+      "companionId": "mystery",
+      "name": "黑桃荷官·伊芙琳",
+      "description": "她看得穿每一场骗局，却从不替别人下注。",
+      "color": "#111817",
+      "accent": "#2f755d",
+      "assetFile": "mystery-code-spade-croupier.webp",
+      "thumbnailFile": "mystery-code-spade-croupier.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "spade-gambit"
+      },
+      "cheatCode": {
+        "id": "spade-gambit",
+        "code": "SPADE-GAMBIT",
+        "badge": "桃",
+        "unlockedMessage": "兑换码确认。伊芙琳已经翻开最后一张黑桃。",
+        "activatedMessage": "兑换码再次确认。黑桃荷官·伊芙琳已切换到桌面。"
+      }
+    },
+    {
+      "id": "rabbit-code-crimson-dancer",
+      "companionId": "rabbit",
+      "name": "赤焰舞者·卡门",
+      "description": "掌声散去以后，她仍把每一步走得漂亮而清醒。",
+      "color": "#281416",
+      "accent": "#b53535",
+      "assetFile": "rabbit-code-crimson-dancer.webp",
+      "thumbnailFile": "rabbit-code-crimson-dancer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "crimson-fan"
+      },
+      "cheatCode": {
+        "id": "crimson-fan",
+        "code": "CRIMSON-FAN",
+        "badge": "舞",
+        "unlockedMessage": "兑换码确认。卡门已经展开赤红折扇。",
+        "activatedMessage": "兑换码再次确认。赤焰舞者·卡门已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-jade-serpent",
+      "companionId": "mystery",
+      "name": "月下蛇妖·青珞",
+      "description": "她褪去被预言安排的旧鳞，第一次以自己的名字行走人间。",
+      "color": "#edf2ee",
+      "accent": "#73aa9e",
+      "assetFile": "mystery-code-jade-serpent.webp",
+      "thumbnailFile": "mystery-code-jade-serpent.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "jade-serpent"
+      },
+      "cheatCode": {
+        "id": "jade-serpent",
+        "code": "JADE-SERPENT",
+        "badge": "珞",
+        "unlockedMessage": "兑换码确认。青珞已经从月色中显出身形。",
+        "activatedMessage": "兑换码再次确认。月下蛇妖·青珞已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-covenant-tutor",
+      "companionId": "mystery",
+      "name": "圣契导师·艾德琳",
+      "description": "她把不可质疑的天律改写成课程，也把选择权还给每一位成年学习者。",
+      "color": "#ece8df",
+      "accent": "#b99a58",
+      "assetFile": "mystery-code-covenant-tutor.webp",
+      "thumbnailFile": "mystery-code-covenant-tutor.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "covenant-lesson"
+      },
+      "cheatCode": {
+        "id": "covenant-lesson",
+        "code": "COVENANT-LESSON",
+        "badge": "契",
+        "unlockedMessage": "兑换码确认。艾德琳已经为你翻开圣契教案。",
+        "activatedMessage": "兑换码再次确认。圣契导师·艾德琳已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-fallen-covenant",
+      "companionId": "mystery",
+      "name": "圣堕导师·诺薇娅",
+      "description": "她同时记得圣堂的规则与深渊的反例，因此从不替任何权威隐藏退出条款。",
+      "color": "#f4f4f5",
+      "accent": "#25262b",
+      "assetFile": "mystery-code-fallen-covenant.webp",
+      "thumbnailFile": "mystery-code-fallen-covenant.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "black-wing-covenant"
+      },
+      "cheatCode": {
+        "id": "black-wing-covenant",
+        "code": "BLACK-WING-COVENANT",
+        "badge": "堕",
+        "unlockedMessage": "兑换码确认。诺薇娅已经展开黑翼，带来未删改的契约。",
+        "activatedMessage": "兑换码再次确认。圣堕导师·诺薇娅已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-siren-navigator",
+      "companionId": "mystery",
+      "name": "深海领航员·涅蕾娅",
+      "description": "她不再用歌声替旅客决定方向，只负责标出航线、风险，以及随时返航的权利。",
+      "color": "#e9fbfc",
+      "accent": "#167b8f",
+      "assetFile": "mystery-code-siren-navigator.webp",
+      "thumbnailFile": "mystery-code-siren-navigator.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "siren-airway"
+      },
+      "cheatCode": {
+        "id": "siren-airway",
+        "code": "SIREN-AIRWAY",
+        "badge": "澜",
+        "unlockedMessage": "兑换码确认。涅蕾娅已经接通深海航线。",
+        "activatedMessage": "兑换码再次确认。深海领航员·涅蕾娅已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-dragon-secretary",
+      "companionId": "mystery",
+      "name": "龙裔礼仪官·维瑟拉",
+      "description": "她熟悉所有礼仪与条款，却只愿用这些知识替人保留拒绝和退出的余地。",
+      "color": "#f6f0e7",
+      "accent": "#8b632b",
+      "assetFile": "mystery-code-dragon-secretary.webp",
+      "thumbnailFile": "mystery-code-dragon-secretary.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "dragon-protocol"
+      },
+      "cheatCode": {
+        "id": "dragon-protocol",
+        "code": "DRAGON-PROTOCOL",
+        "badge": "龙",
+        "unlockedMessage": "兑换码确认。维瑟拉已经带着修订后的礼仪簿抵达。",
+        "activatedMessage": "兑换码再次确认。龙裔礼仪官·维瑟拉已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-starship-sister",
+      "companionId": "mystery",
+      "name": "星舰修女·塞莱妮",
+      "description": "她允许人们祈愿，但在等待奇迹之前，总会先把能够执行的方案准备妥当。",
+      "color": "#f2f1f7",
+      "accent": "#6f6aa8",
+      "assetFile": "mystery-code-starship-sister.webp",
+      "thumbnailFile": "mystery-code-starship-sister.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "orbital-liturgy"
+      },
+      "cheatCode": {
+        "id": "orbital-liturgy",
+        "code": "ORBITAL-LITURGY",
+        "badge": "轨",
+        "unlockedMessage": "兑换码确认。塞莱妮已经完成静默轨道校准。",
+        "activatedMessage": "兑换码再次确认。星舰修女·塞莱妮已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-museum-thief",
+      "companionId": "mystery",
+      "name": "夜藏馆长·维奥拉",
+      "description": "白天她替藏品写下历史，夜晚则把那些不该被收藏的危险秘密悄悄送还。",
+      "color": "#f3e9e8",
+      "accent": "#722b35",
+      "assetFile": "mystery-code-museum-thief.webp",
+      "thumbnailFile": "mystery-code-museum-thief.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "midnight-curator"
+      },
+      "cheatCode": {
+        "id": "midnight-curator",
+        "code": "MIDNIGHT-CURATOR",
+        "badge": "藏",
+        "unlockedMessage": "兑换码确认。维奥拉已经打开午夜馆藏室。",
+        "activatedMessage": "兑换码再次确认。夜藏馆长·维奥拉已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-sacred-perfumer",
+      "companionId": "mystery",
+      "name": "圣证调香师·塞芙拉",
+      "description": "她从气味中复原记忆，却坚持把每一段感觉与能够验证的事实分开记录。",
+      "color": "#f7f1e8",
+      "accent": "#b99a58",
+      "assetFile": "mystery-code-sacred-perfumer.webp",
+      "thumbnailFile": "mystery-code-sacred-perfumer.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "sacred-evidence"
+      },
+      "cheatCode": {
+        "id": "sacred-evidence",
+        "code": "SACRED-EVIDENCE",
+        "badge": "香",
+        "unlockedMessage": "兑换码确认。塞芙拉已经封存圣证香气样本。",
+        "activatedMessage": "兑换码再次确认。圣证调香师·塞芙拉已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-rose-appraiser",
+      "companionId": "mystery",
+      "name": "粉晶鉴定官·洛瑟琳",
+      "description": "她能看见宝石中残留的欲望，也能分辨昂贵真品背后是否藏着不应被加冕的历史。",
+      "color": "#f3d4dc",
+      "accent": "#b9657a",
+      "assetFile": "mystery-code-rose-appraiser.webp",
+      "thumbnailFile": "mystery-code-rose-appraiser.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "rose-coronation"
+      },
+      "cheatCode": {
+        "id": "rose-coronation",
+        "code": "ROSE-CORONATION",
+        "badge": "晶",
+        "unlockedMessage": "兑换码确认。洛瑟琳已经完成粉晶冠冕鉴定。",
+        "activatedMessage": "兑换码再次确认。粉晶鉴定官·洛瑟琳已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-eclipse-butterfly",
+      "companionId": "mystery",
+      "name": "月蚀蝶后·塔莉娅",
+      "description": "她拒绝以保护为名牺牲最后的夜蝶，最终成为蝶群自愿选择的共生宿主。",
+      "color": "#171321",
+      "accent": "#7560b8",
+      "assetFile": "mystery-code-eclipse-butterfly.webp",
+      "thumbnailFile": "mystery-code-eclipse-butterfly.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "eclipse-chrysalis"
+      },
+      "cheatCode": {
+        "id": "eclipse-chrysalis",
+        "code": "ECLIPSE-CHRYSALIS",
+        "badge": "蝶",
+        "unlockedMessage": "兑换码确认。塔莉娅的月蚀标本匣已经亮起。",
+        "activatedMessage": "兑换码再次确认。月蚀蝶后·塔莉娅已切换到桌面。"
+      }
+    },
+    {
+      "id": "mystery-code-dream-architect",
+      "companionId": "mystery",
+      "name": "梦境圣筑师·弥蕾",
+      "description": "她能够设计近乎完美的梦城，却坚持在每条街道尽头留下醒来的出口。",
+      "color": "#f2f4f8",
+      "accent": "#8093bc",
+      "assetFile": "mystery-code-dream-architect.webp",
+      "thumbnailFile": "mystery-code-dream-architect.webp",
+      "identityMode": "roleplay",
+      "renderMode": "transparent",
+      "unlock": {
+        "type": "hidden-code",
+        "codeId": "dream-cathedral"
+      },
+      "cheatCode": {
+        "id": "dream-cathedral",
+        "code": "DREAM-CATHEDRAL",
+        "badge": "筑",
+        "unlockedMessage": "兑换码确认。弥蕾已经展开无眠教堂的蓝图。",
+        "activatedMessage": "兑换码再次确认。梦境圣筑师·弥蕾已切换到桌面。"
+      }
     }
   ]
 }

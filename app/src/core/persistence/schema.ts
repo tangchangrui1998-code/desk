@@ -1,6 +1,7 @@
 import { APPEARANCE_BY_ID, COMPANIONS, COMPANION_BY_ID } from '../companions/registry';
 import type {
   AppState,
+  AiProviderId,
   AppearancePersona,
   BackendTheme,
   BehaviorState,
@@ -29,7 +30,10 @@ export function createInitialAppState(): AppState {
       remindersEnabled: true,
       backendTheme: 'follow',
       aiProviderId: 'local',
-      aiModel: 'deepseek-chat',
+      aiModels: {
+        deepseek: 'deepseek-chat',
+        openai: 'gpt-5.6-luna',
+      },
     },
     unlocks: [],
     appearancePersonaOverrides: {},
@@ -83,6 +87,11 @@ function sanitizeAppState(input: unknown): AppState {
     sanitizeCompanionState(rawCompanions[id], fallback.companions[id]),
   ])) as Record<CompanionId, CompanionState>;
   const settings = isRecord(input.settings) ? input.settings : {};
+  const aiProviderId: AiProviderId = settings.aiProviderId === 'deepseek' || settings.aiProviderId === 'openai'
+    ? settings.aiProviderId
+    : 'local';
+  const persistedModels = isRecord(settings.aiModels) ? settings.aiModels : {};
+  const legacyModel = typeof settings.aiModel === 'string' ? settings.aiModel : '';
   return {
     version: LATEST_STATE_VERSION,
     activeCompanionId,
@@ -92,14 +101,25 @@ function sanitizeAppState(input: unknown): AppState {
       alwaysOnTop: typeof settings.alwaysOnTop === 'boolean' ? settings.alwaysOnTop : fallback.settings.alwaysOnTop,
       remindersEnabled: typeof settings.remindersEnabled === 'boolean' ? settings.remindersEnabled : fallback.settings.remindersEnabled,
       backendTheme: isBackendTheme(settings.backendTheme) ? settings.backendTheme : fallback.settings.backendTheme,
-      aiProviderId: settings.aiProviderId === 'deepseek' ? 'deepseek' : 'local',
-      aiModel: typeof settings.aiModel === 'string' && settings.aiModel.trim()
-        ? settings.aiModel.trim().slice(0, 100)
-        : fallback.settings.aiModel,
+      aiProviderId,
+      aiModels: {
+        deepseek: normalizeModel(
+          persistedModels.deepseek ?? legacyModel,
+          fallback.settings.aiModels.deepseek,
+        ),
+        openai: normalizeModel(
+          persistedModels.openai ?? (aiProviderId === 'openai' ? legacyModel : ''),
+          fallback.settings.aiModels.openai,
+        ),
+      },
     },
     unlocks: stringArray(input.unlocks),
     appearancePersonaOverrides: sanitizeAppearancePersonaOverrides(input.appearancePersonaOverrides),
   };
+}
+
+function normalizeModel(value: unknown, fallback: string) {
+  return typeof value === 'string' && value.trim() ? value.trim().slice(0, 100) : fallback;
 }
 
 function sanitizeAppearancePersonaOverrides(value: unknown): Record<string, AppearancePersona> {

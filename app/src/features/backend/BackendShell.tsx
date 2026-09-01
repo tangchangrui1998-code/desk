@@ -3,7 +3,8 @@ import { getActiveAppearance } from '../../core/companions/selectors';
 import { useAppState } from '../../core/persistence/store';
 import type { BackendTheme } from '../../core/companions/types';
 import { closeWindow, startWindowDragging } from '../../platform/window/runtime';
-import { deepSeekProvider, readableProviderError } from '../../platform/ai/deepseek';
+import { remoteAiProviders, type RemoteAiProviderId } from '../../platform/ai/providers';
+import { readableProviderError } from '../../platform/ai/runtime';
 import { CompanionPanel, RedemptionPanel } from '../companions/CompanionPanel';
 import { CompanionRail } from '../companions/CompanionRail';
 
@@ -62,7 +63,7 @@ function Settings({ alwaysOnTop, onAlwaysOnTopChange }: {
         <button className={`switch ${alwaysOnTop ? 'is-on' : ''}`} type="button" role="switch" aria-checked={alwaysOnTop} onClick={() => onAlwaysOnTopChange(!alwaysOnTop)}><span /></button>
       </div>
       <div className="settings-card">
-        <div><strong>主动对白与提醒</strong><small>启用 DeepSeek 时由模型生成问候，否则使用本地人物对白。</small></div>
+        <div><strong>主动对白与提醒</strong><small>启用联网模型时由模型生成问候，否则使用本地人物对白。</small></div>
         <button className={`switch ${state.settings.remindersEnabled ? 'is-on' : ''}`} type="button" role="switch" aria-checked={state.settings.remindersEnabled} onClick={() => setRemindersEnabled(!state.settings.remindersEnabled)}><span /></button>
       </div>
       <div className="theme-settings">
@@ -77,52 +78,92 @@ function Settings({ alwaysOnTop, onAlwaysOnTopChange }: {
 function AiSettings() {
   const { state, setAiSettings } = useAppState();
   const apiKeyInput = useRef<HTMLInputElement>(null);
-  const [model, setModel] = useState(state.settings.aiModel);
-  const [configured, setConfigured] = useState(false);
+  const [editingProvider, setEditingProvider] = useState<RemoteAiProviderId>(
+    state.settings.aiProviderId === 'local' ? 'deepseek' : state.settings.aiProviderId,
+  );
+  const [models, setModels] = useState(state.settings.aiModels);
+  const [configured, setConfigured] = useState<Record<RemoteAiProviderId, boolean>>({ deepseek: false, openai: false });
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
+  const provider = remoteAiProviders[editingProvider];
+  const providerName = providerLabel(editingProvider);
+  const model = models[editingProvider];
 
   useEffect(() => {
-    void deepSeekProvider.getStatus().then((status) => setConfigured(status.configured)).catch(() => setConfigured(false));
+    void Promise.all([
+      remoteAiProviders.deepseek.getStatus().catch(() => ({ configured: false })),
+      remoteAiProviders.openai.getStatus().catch(() => ({ configured: false })),
+    ]).then(([deepseek, openai]) => setConfigured({ deepseek: deepseek.configured, openai: openai.configured }));
   }, []);
+
+  useEffect(() => {
+    if (apiKeyInput.current) apiKeyInput.current.value = '';
+    setMessage('');
+  }, [editingProvider]);
 
   const saveAndTest = async (event: FormEvent) => {
     event.preventDefault();
     setBusy(true); setMessage('');
     try {
       const apiKey = apiKeyInput.current?.value.trim() ?? '';
-      if (apiKey) await deepSeekProvider.saveCredential(apiKey);
-      await deepSeekProvider.test(model);
-      setConfigured(true); setAiSettings('deepseek', model);
+      if (apiKey) await provider.saveCredential(apiKey);
+      await provider.test(model);
+      setConfigured((current) => ({ ...current, [editingProvider]: true }));
+      setAiSettings(editingProvider, model);
       if (apiKeyInput.current) apiKeyInput.current.value = '';
-      setMessage('连接成功，已启用 DeepSeek 对话。');
+      setMessage(`连接成功，已启用 ${providerName} 对话。`);
     } catch (error) { setMessage(readableProviderError(error)); }
     finally { setBusy(false); }
   };
   const remove = async () => {
     setBusy(true); setMessage('');
-    try { await deepSeekProvider.deleteCredential(); setConfigured(false); setAiSettings('local'); setMessage('API Key 已从系统凭据库删除。'); }
+    try {
+      await provider.deleteCredential();
+      setConfigured((current) => ({ ...current, [editingProvider]: false }));
+      if (state.settings.aiProviderId === editingProvider) setAiSettings('local');
+      setMessage(`${providerName} API Key 已从系统凭据库删除。`);
+    }
     catch (error) { setMessage(readableProviderError(error)); }
     finally { setBusy(false); }
+  };
+
+  const selectRemoteProvider = (providerId: RemoteAiProviderId) => {
+    setEditingProvider(providerId);
+    if (configured[providerId]) setAiSettings(providerId, models[providerId]);
   };
 
   return (
     <>
       <p className="section-kicker">对话服务</p>
       <h1>离线可用，联网可选</h1>
-      <p className="section-lead">本地规则始终维护人物关系、情绪和解锁。DeepSeek 只生成语言，API Key 仅保存在系统凭据库。</p>
+      <p className="section-lead">本地规则始终维护人物关系、情绪和解锁。DeepSeek 或 OpenAI 只生成语言，API Key 分别保存在系统凭据库。</p>
       <div className="provider-choice">
-        <button className={state.settings.aiProviderId === 'local' ? 'is-active' : ''} onClick={() => setAiSettings('local')}><strong>离线基础模式</strong><small>无需 Key，四名人物均可聊天</small></button>
-        <button className={state.settings.aiProviderId === 'deepseek' ? 'is-active' : ''} disabled={!configured} onClick={() => configured && setAiSettings('deepseek', model)}><strong>DeepSeek</strong><small>{configured ? '系统凭据库已配置' : '尚未配置'}</small></button>
+        <button className={state.settings.aiProviderId === 'local' ? 'is-active' : ''} disabled={busy} onClick={() => setAiSettings('local')}><strong>离线基础模式</strong><small>无需 Key，四名人物均可聊天</small></button>
+        {(['deepseek', 'openai'] as RemoteAiProviderId[]).map((providerId) => (
+          <button
+            key={providerId}
+            className={`${state.settings.aiProviderId === providerId ? 'is-active' : ''} ${editingProvider === providerId ? 'is-editing' : ''}`}
+            disabled={busy}
+            onClick={() => selectRemoteProvider(providerId)}
+          >
+            <strong>{providerLabel(providerId)}</strong>
+            <small>{configured[providerId] ? '系统凭据库已配置' : '点击进行配置'}</small>
+          </button>
+        ))}
       </div>
       <form className="provider-form" onSubmit={(event) => void saveAndTest(event)}>
-        <label>模型<input value={model} maxLength={100} onChange={(event) => setModel(event.target.value)} /></label>
-        <label>API Key<input ref={apiKeyInput} type="password" autoComplete="off" placeholder={configured ? '留空可测试已有 Key' : '输入 DeepSeek API Key'} /></label>
-        <div><button type="submit" disabled={busy || !model.trim()}>{busy ? '处理中…' : '保存并测试'}</button><button type="button" disabled={busy || !configured} onClick={() => void remove()}>删除 Key</button></div>
+        <strong className="provider-form__title">配置 {providerName}</strong>
+        <label>模型<input value={model} maxLength={100} onChange={(event) => setModels((current) => ({ ...current, [editingProvider]: event.target.value }))} /></label>
+        <label>API Key<input ref={apiKeyInput} type="password" autoComplete="off" placeholder={configured[editingProvider] ? '留空可测试已有 Key' : `输入 ${providerName} API Key`} /></label>
+        <div><button type="submit" disabled={busy || !model.trim()}>{busy ? '处理中…' : '保存并测试'}</button><button type="button" disabled={busy || !configured[editingProvider]} onClick={() => void remove()}>删除 Key</button></div>
         {message && <p role="status">{message}</p>}
       </form>
     </>
   );
+}
+
+function providerLabel(providerId: RemoteAiProviderId) {
+  return providerId === 'openai' ? 'OpenAI' : 'DeepSeek';
 }
 
 function themeLabel(theme: BackendTheme) {

@@ -15,6 +15,10 @@ export function PetChatPanel({ companionId, companionName, appearance, onClose }
   const messagesRef = useRef<HTMLDivElement>(null);
   const followLatestRef = useRef(true);
   const hasPositionedRef = useRef(false);
+  const providerId = state.settings.aiProviderId;
+  const providerDescription = providerId === 'local'
+    ? '离线基础模式'
+    : `${providerId === 'openai' ? 'OpenAI' : 'DeepSeek'} · ${state.settings.aiModels[providerId]}`;
 
   useEffect(() => {
     const container = messagesRef.current;
@@ -42,7 +46,7 @@ export function PetChatPanel({ companionId, companionName, appearance, onClose }
         <span className="pet-chat-panel__portrait"><img src={appearance.render.thumbnail} alt="" /></span>
         <div>
           <strong>{companionName}</strong>
-          <small>{appearance.name} · {state.settings.aiProviderId === 'deepseek' ? 'DeepSeek · ' + state.settings.aiModel : '离线基础模式'}</small>
+          <small>{appearance.name} · {providerDescription}</small>
         </div>
         <button type="button" className="pet-chat-panel__clear" onClick={() => clear(false)}>清空</button>
         <button type="button" className="pet-chat-panel__close" aria-label="关闭对话" onClick={onClose}>×</button>

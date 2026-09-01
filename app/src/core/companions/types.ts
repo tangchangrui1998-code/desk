@@ -5,6 +5,7 @@ export type VisualState = 'idle' | 'blink' | 'happy' | 'annoyed' | 'touched' | '
 export type HitZone = 'head' | 'upperBody' | 'outside';
 export type DayPeriod = 'morning' | 'day' | 'evening' | 'night';
 export type BackendTheme = 'follow' | 'meadow' | 'crimson-mecha' | 'blue-mecha';
+export type AiProviderId = 'local' | 'deepseek' | 'openai';
 
 export interface PersonaDefinition {
   identity: string;
@@ -108,8 +109,8 @@ export interface AppSettings {
   alwaysOnTop: boolean;
   remindersEnabled: boolean;
   backendTheme: BackendTheme;
-  aiProviderId: 'local' | 'deepseek';
-  aiModel: string;
+  aiProviderId: AiProviderId;
+  aiModels: Record<Exclude<AiProviderId, 'local'>, string>;
 }
 
 export interface AppState {
